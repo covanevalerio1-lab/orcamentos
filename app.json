@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Orçamento App",
+    "slug": "orcamento-app",
+    "version": "1.0.0",
+    "scheme": "orcamentoapp",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#10B981"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.exemplo.orcamentoapp"
+    },
+    "android": {
+      "package": "com.exemplo.orcamentoapp",
+      "adaptiveIcon": {
+        "backgroundColor": "#10B981"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-share-intent",
+        {
+          "iosActivationRules": {
+            "NSExtensionActivationSupportsText": true
+          },
+          "androidIntentFilters": ["text/*"]
+        }
+      ]
+    ]
+  }
+}
