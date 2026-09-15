@@ -8,7 +8,7 @@ App móvel de controlo de orçamento e gastos mensais, feita com **React Native 
 - Registo manual de gastos (valor, categoria, nota, data)
 - Registo semi-automático via SMS do M-Pesa (partilha nativa ou colar texto)
 - Categorias predefinidas
-- Definição de orçamento mensal (a UI de definir orçamento ainda falta — ver "Próximos passos")
+- Definição de receita e orçamento mensal
 - Dashboard com total gasto, barra de progresso e gráfico por categoria
 - Histórico de gastos do mês
 
@@ -107,16 +107,15 @@ orcamento-app/
 
 ## Próximos passos sugeridos
 
-1. **Ecrã de definir orçamento mensal** — falta a UI (a função `setBudget` já existe em `services/expenses.js`)
-2. **Regras de segurança do Firestore** — importante antes de lançar, para garantir que cada utilizador só acede aos seus próprios dados:
+1. **Regras de segurança do Firestore** — importante antes de lançar, para garantir que cada utilizador só acede aos seus próprios dados:
    ```
    match /expenses/{id} {
      allow read, write: if request.auth.uid == resource.data.userId;
    }
    ```
-3. **Edição/eliminação de gastos**
-4. **Notificações** quando se aproxima do limite do orçamento
-5. **Integração Open Banking** (fase 2) — ver conversa para detalhes sobre Tink/GoCardless/Plaid
+2. **Edição/eliminação de gastos**
+3. **Notificações** quando se aproxima do limite do orçamento
+4. **Integração Open Banking** (fase 2) — ver conversa para detalhes sobre Tink/GoCardless/Plaid
 
 ## Nota sobre custos
 Firebase tem um plano gratuito generoso (Spark) suficiente para o MVP e testes iniciais.

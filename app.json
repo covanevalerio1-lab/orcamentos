@@ -18,7 +18,14 @@
       "package": "com.exemplo.orcamentoapp",
       "adaptiveIcon": {
         "backgroundColor": "#10B981"
-      }
+      },
+         "queries": [
+        {
+          "action": "android.intent.action.DIAL",
+          "data": { "scheme": "tel" }
+        }
+      ],
+      "permissions": ["android.permission.CALL_PHONE"]
     },
     "web": {
       "bundler": "metro"
@@ -27,12 +34,15 @@
       [
         "expo-share-intent",
         {
-          "iosActivationRules": {
-            "NSExtensionActivationSupportsText": true
-          },
-          "androidIntentFilters": ["text/*"]
+          "androidIntentFilters": ["text/*"],
+          "disableIOS": true
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "767fa18a-d9d7-4b44-842f-51c2e9f2008e"
+      }
+    }
   }
 }
